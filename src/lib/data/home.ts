@@ -1,8 +1,9 @@
 // src/lib/data/home.ts
 import { Platform } from '$lib/types';
 import { getSkills } from './skills';
+import { base } from '$app/paths';
 
-export const avatar = '/Anish.JPG';
+export const avatar = `${base}/Anish.JPG`;
 export const title = 'Home';
 export const name = 'Anish';
 export const lastName = 'Kanade';

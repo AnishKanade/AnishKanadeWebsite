@@ -3,6 +3,7 @@
 //export const title = 'Resumé';
 export const data = '';
 
+
 export const title = 'Resumé';
 
 // Update the link to point to the location of your PDF file
