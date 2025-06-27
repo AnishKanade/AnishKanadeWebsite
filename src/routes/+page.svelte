@@ -1,45 +1,140 @@
 <script lang="ts">
-	import Carrousel from '$lib/components/Carrousel/Carrousel.svelte';
-	import Icon from '$lib/components/Icon/Icon.svelte';
-	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-	import { titleSuffix } from '@data/app';
-	import { links, description, lastName, name, title, skills } from '@data/home';
-	import { items as skillsItems } from '@data/skills';
-	import { useTitle } from '$lib/utils/helpers';
-	import { isBlank } from '@riadh-adrani/utils';
-	import { getPlatfromIcon } from '$lib/utils';
+  import Carrousel from '$lib/components/Carrousel/Carrousel.svelte';
+  import Icon from '$lib/components/Icon/Icon.svelte';
+  import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
+  import { titleSuffix } from '@data/app';
+  import {
+    links,
+    description,
+    lastName,
+    name,
+    title,
+    skills,
+    avatar,
+    location
+  } from '@data/home';
+  import { items as skillsItems } from '@data/skills';
+  import { useTitle } from '$lib/utils/helpers';
+  import { isBlank } from '@riadh-adrani/utils';
+  import { getPlatfromIcon } from '$lib/utils';
 
-	const isEmail = (email: string): boolean => {
-		const reg =
-			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-		return !isBlank(email) && reg.test(email);
-	};
+  const isEmail = (email: string): boolean => {
+    const reg =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return !isBlank(email) && reg.test(email);
+  };
 </script>
 
 <svelte:head>
-	<title>{useTitle(title, titleSuffix)}</title>
+  <title>{useTitle(title, titleSuffix)}</title>
 </svelte:head>
-<div
-	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-10px"
->
-	<div class="md:flex-1 gap-10px">
-		<MainTitle classes="md:text-left ">{name} {lastName},</MainTitle>
-		<p class="text-[var(--tertiary-text)]  text-center md:text-left text-[1.2em] font-extralight">
-			{description}
-		</p>
-		<div class="row justify-center md:justify-start p-y-15px p-x-0px gap-2">
-			{#each links as link}
-				<a
-					class="decoration-none"
-					href={`${isEmail(link.link) ? 'mailto:' : ''}${link.link}`}
-					target="_blank"
-					rel="noreferrer"
-				>
-					<Icon icon={getPlatfromIcon(link.platform)} color={'var(--accent-text)'} size={'20px'} />
-				</a>
-			{/each}
-		</div>
-	</div>
-	<Carrousel items={skills ?? skillsItems} />
+
+<div class="hero">
+  <div class="hero-text">
+    <!-- Avatar -->
+    <img src={avatar} alt="Anish Kanade" class="avatar" />
+
+    <!-- Name -->
+    <MainTitle>{name} {lastName},</MainTitle>
+
+    <!-- Location (new) -->
+    <div class="location">{location}</div>
+
+    <!-- Description -->
+    <div class="overview">
+      {@html description}
+    </div>
+
+    <!-- Social Links -->
+    <div class="links">
+      {#each links as link}
+        <a
+          href={`${isEmail(link.link) ? 'mailto:' : ''}${link.link}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon icon={getPlatfromIcon(link.platform)} size="24px" />
+        </a>
+      {/each}
+    </div>
+  </div>
+
+  <!-- Skills Carousel -->
+  <div class="hero-side">
+    <Carrousel items={skills ?? skillsItems} />
+  </div>
 </div>
+
+<style lang="scss">
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+
+  .hero-text {
+    flex: 2;
+    min-width: 260px;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-text);
+    margin-bottom: 1rem;
+  }
+
+  /* New: Location styling */
+  .location {
+    font-size: 0.9em;
+    color: var(--secondary-text);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .overview {
+    color: var(--tertiary-text);
+    font-size: 1.15em;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+
+  /* Styled bullet list */
+  .overview-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+  .overview-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .overview-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-text);
+  }
+
+  .overview-footer {
+    margin-top: 1.5rem;
+  }
+
+  .links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hero-side {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    justify-content: center;
+  }
+</style>

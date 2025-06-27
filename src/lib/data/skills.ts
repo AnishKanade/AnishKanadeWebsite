@@ -8,6 +8,7 @@ const categories = [
 	defineSkillCategory({ name: 'Programming Languages', slug: 'pro-lang' }),
 	defineSkillCategory({ name: 'Frameworks', slug: 'framework' }),
 	defineSkillCategory({ name: 'Libraries', slug: 'library' }),
+	defineSkillCategory({ name: 'Cloud', slug: 'cloud' }),
 	defineSkillCategory({ name: 'DevOps', slug: 'devops' }),
 	defineSkillCategory({ name: 'Databases', slug: 'db' }),
 	defineSkillCategory({ name: 'Testing', slug: 'test' }),
@@ -41,26 +42,32 @@ export const items = [
 	defineSkill({ slug: 'C#', color: 'cyan', description: 'Go programming language for backend services.', logo: Assets.Csharp, name: 'C#', category: 'pro-lang' }),
 	defineSkill({ slug: 'java', color: 'red', description: 'Java for cross-platform applications.', logo: Assets.Java, name: 'Java', category: 'pro-lang' }),
 	
-	// Frameworks
+	// Frameworks / Frontend
 	defineSkill({ slug: 'reactjs', color: 'cyan', description: 'React for building interactive web applications.', logo: Assets.ReactJs, name: 'ReactJS', category: 'framework' }),
 	defineSkill({ slug: 'svelte', color: 'orange', description: 'Svelte for lightweight frontend frameworks.', logo: Assets.Svelte, name: 'Svelte', category: 'framework' }),
 	defineSkill({ slug: 'django', color: 'green', description: 'Django for high-level Python web applications.', logo: Assets.Django, name: 'Django', category: 'framework' }),
 	defineSkill({ slug: 'Bootstrap', color: 'green', description: 'Bootstrap open-source framework for building websites and web apps.', logo: Assets.Bootstrap, name: 'Bootstrap', category: 'framework' }),
 	//defineSkill({ slug: 'expressjs', color: 'green', description: 'Express.js for Node.js web applications.', logo: Assets.ExpressJs, name: 'ExpressJS', category: 'framework' }),
 
-	// Libraries
+	// Libraries / Data Science
 	defineSkill({ slug: 'numpy', color: 'blue', description: 'NumPy for scientific computing in Python.', logo: Assets.Numpy, name: 'NumPy', category: 'library' }),
-	defineSkill({ slug: 'pandas', color: 'green', description: 'Pandas for data manipulation in Python.', logo: Assets.Pandas, name: 'Pandas', category: 'library' }),
+	defineSkill({ slug: 'pandas', color: 'teal', description: 'Pandas for data manipulation in Python.', logo: Assets.Pandas, name: 'Pandas', category: 'library' }),
+	defineSkill({ slug: 'matplolib', color: 'navy', description: 'Matplotlib for data visualization in Python', logo: Assets.Unknown, name: 'Matplotlib', category: 'library' }),
+	defineSkill({ slug: 'scikit-learn', color: 'green', description: 'Scikit-learn for machine learning in Python.', logo: Assets.Unknown, name: 'Scikit-learn', category: 'library' }),
+	// Cloud
+	defineSkill({ slug: 'aws', color: 'orange', description: 'Amazon Web Services for cloud infrastructure.', logo: Assets.AWS, name: 'AWS', category: 'cloud' }),
+	defineSkill({ slug: 'gcp', color: 'green', description: 'Google Cloud Platform for scalable cloud services.', logo: Assets.Unknown, name: 'GCP', category: 'cloud' }),
 
 	// Databases
 	defineSkill({ slug: 'SQL', color: 'green', description: 'SQl Database.', logo: Assets.Unknown, name: 'SQL', category: 'db' }),
 	defineSkill({ slug: 'postgresql', color: 'blue', description: 'PostgreSQL for relational databases.', logo: Assets.PostgreSQL, name: 'PostgreSQL', category: 'db' }),
 
 	// DevOps
-	/*defineSkill({ slug: 'docker', color: 'blue', description: 'Docker for containerization.', logo: Assets.Docker, name: 'Docker', category: 'devops' }),
+	defineSkill({ slug: 'docker', color: 'blue', description: 'Docker for containerization.', logo: Assets.Docker, name: 'Docker', category: 'devops' }),
 	defineSkill({ slug: 'kubernetes', color: 'blue', description: 'Kubernetes for orchestration.', logo: Assets.Kubernetes, name: 'Kubernetes', category: 'devops' }),
-	defineSkill({ slug: 'aws', color: 'orange', description: 'AWS for cloud computing services.', logo: Assets.AWS, name: 'AWS', category: 'devops' }),
-
+	
+	
+/*
 	// Testing
 	defineSkill({ slug: 'jest', color: 'green', description: 'Jest for JavaScript testing.', logo: Assets.Jest, name: 'Jest', category: 'test' }),
 */

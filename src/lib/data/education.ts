@@ -9,7 +9,7 @@ export const items: Array<Education> = [
         logo: Assets.UMB, // Replace with appropriate asset if available
         name: '',
         organization: 'University of Massachusetts Boston',
-        period: { from: new Date(2021, 8, 1), to: new Date(2025, 5, 25) }, // Adjust dates if necessary
+        period: { from: new Date(2021, 5, 1), to: new Date(2025, 5, 29) }, // Adjust dates if necessary
         shortDescription: '',
         slug: 'umb-computer-science',
         subjects: [
@@ -25,7 +25,13 @@ export const items: Array<Education> = [
             'Artificial Intelligence',
             'Introduction to Software Engineering',
 			'Higher Level Languages',
-			'Compilers'
+            'Theory of Computation',
+			'Compilers',
+            'Calculus',
+            'Linear Algebra',
+            'Probability and Statistics',
+            'Calculus Based Physics',
+            'Physics Lab'
 			
         ]
     },
