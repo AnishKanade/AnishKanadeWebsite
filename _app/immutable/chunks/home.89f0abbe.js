@@ -1,4 +1,4 @@
-import{P as s}from"./types.7ffc7bf1.js";import{g as a}from"./skills.b738ba6c.js";import{b as t}from"./paths.550b9e0b.js";const i=`${t}/Anish.JPG`,l="Home",r="Anish",c="Kanade",m="Cambridge, Massachusetts, United States",d=`
+import{P as s}from"./types.7ffc7bf1.js";import{g as a}from"./skills.6bbcf769.js";import{b as t}from"./paths.dba963e8.js";const i=`${t}/Anish.JPG`,l="Home",r="Anish",c="Kanade",m="Cambridge, Massachusetts, United States",d=`
   <p><strong>Hi there!</strong> My name is Anish Kanade, a Computer Science graduate from UMass Boston who builds data-driven, cloud-powered applications.</p>
   <ul class="overview-list">
     <li><strong>Serverless ETL on AWS:</strong> Reduced data latency by 50% while maintaining 98% consistency.</li>
